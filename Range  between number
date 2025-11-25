@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Range {
+
+    public void print(int num) {
+        if (num > 5) {
+            return;
+        }
+        System.out.println(num);
+        print(num + 1);
+        // System.out.println(num);
+
+    }
+
+    public static void main(String[] args) {
+        Range rg = new Range();
+
+        rg.print(1);
+    }
+
+}
