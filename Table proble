@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Table {
+    public static int isTable(int s, int num, int e) {
+
+        if (s > e) {
+            return num;
+
+        }
+        System.out.println(s * num);
+        return isTable(s + 1, num, e);
+
+    }
+
+    public static void main(String[] args) {
+        // Table tl = new Table();
+        isTable(1, 5, 10);
+    }
+
+}
