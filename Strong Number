@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Strong {
+    public static int fact(int num) {
+        if (num == 0) {
+            return 1;
+
+        }
+        int rem = num % 10;
+        int fact = rem * fact(num - 1);
+        fact(num - 1);
+        return fact;
+    }
+
+    public static int strongSum(int num) {
+        if (num == 0) {
+            return 0;
+        }
+        int rem = num % 10;
+        return fact(rem) + strongSum(num / 10);
+    }
+
+    public static boolean isString(int num) {
+        return num == strongSum(fact(num));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isString(145));
+    }
+}
