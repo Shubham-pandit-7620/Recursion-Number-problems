@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Neon {
+    public static boolean isNeon(int num, int squre, int sum) {
+
+        if (squre == 0) {
+
+            return sum == num;
+        }
+
+        sum = sum + (squre % 10);
+        return isNeon(num, squre / 10, sum);
+
+    }
+
+    public static void main(String[] args) {
+        int num = 0;
+        int squre = num * num;
+        System.out.println(isNeon(10, 10, 0));
+    }
+
+}
