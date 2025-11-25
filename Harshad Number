@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Harshad {
+
+    public static boolean isHarshad(int num, int sum, int temp) {
+        if (num == 0) {
+            return temp % sum == 0;
+        }
+        int rem = num % 10;
+        sum = sum + rem;
+
+        return isHarshad(num / 10, sum, temp);
+
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(isHarshad(18, 0, 18));
+
+    }
+}
