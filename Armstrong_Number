@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Armstrong {
+
+    public static boolean isArm(int num, int temp, int sum) {
+        if (num == 0) {
+            return temp == sum;
+        }
+        int temp1 = num % 10;
+        sum = sum + (temp1 * temp1 * temp1);
+
+        return isArm(num / 10, temp, sum);
+
+    }
+
+    public static void main(String[] Args) {
+
+        System.out.println(isArm(154, 153, 0));
+    }
+
+}
