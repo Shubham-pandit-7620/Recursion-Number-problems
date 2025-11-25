@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Automorphic {
+    public static int square(int num, int squre) {
+        return num * num;
+
+    }
+
+    public static boolean sum(int num, int square) {
+        if (square % 10 != num % 10) {
+            return false;
+        }
+        int rem = num % 10;
+        square = square(num, square) % 10;
+        return sum(num / 10, square / 10);
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum(25, 1));
+    }
+
+}
