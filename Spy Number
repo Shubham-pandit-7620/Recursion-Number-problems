@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Spy {
+    public static boolean Spy(int num, int mul, int sum) {
+
+        if (num == 0) {
+            return sum == mul;
+        }
+        sum = sum + num % 10;
+        mul = mul * num % 10;
+        return Spy(num / 10, mul, sum);
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Spy(123, 1, 0));
+    }
+
+}
